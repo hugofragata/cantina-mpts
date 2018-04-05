@@ -14,8 +14,6 @@ except:
     print("\n Erro! Módulo 'xmltodict' não encontrado! Siga as instruções no README.md para instalar e volte a correr o programa.\n")
     sys.exit()
 
-os.system('clear') # Clear the terminal screen
-
 class bcolors: # Define colors
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -34,8 +32,6 @@ def internet_on():
     except urllib.URLError as err: 
         return False
 
-print(bcolors.OKGREEN + '\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n' + bcolors.ENDC + bcolors.BOLD + '                       Ementas na UA\n' + bcolors.ENDC +  bcolors.OKGREEN + '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n' + bcolors.ENDC)
-print('By Rodrigo Rosmaninho - MIECT - 2018\n')
 
 if not internet_on(): # If there is no internet print errors
     print(bcolors.FAIL + '\n======================== ERRO ========================' + bcolors.ENDC)
@@ -50,12 +46,10 @@ else:
     # Sample data: https://codebeautify.org/jsonviewer/cb6c4994
     data = data['result']['menus']['menu'] # Get to the relevent section of the data. 'menu' is an array of objects, each object matches a meal at a certain canteen
 
-    print(bcolors.WARNING + 'Data' + bcolors.ENDC + ': ' + bcolors.HEADER + bcolors.BOLD + data[0]['@date'][:-15] + '\n' + bcolors.ENDC) # Print current date, as found in the dict
-
     # Iterate through the array of meals
     for i in range(len(data)): 
         if data[i]['@meal'] == 'Almoço': # Each canteen can serve 2 meals (Lunch, Dinner). If the current meal is Lunch, print the name of the canteen
-            print(bcolors.OKBLUE + '\n================== ' + '{: ^22}'.format(data[i]['@canteen']) + ' ==================\n' + bcolors.ENDC) # Prints the name of the canteen properly formatted. The space between the '=' must be 22 characters.
+            print(bcolors.OKBLUE + '\n================== ' + '{: ^22}'.format(data[i]['@canteen']) + ' ==================' + bcolors.ENDC) # Prints the name of the canteen properly formatted. The space between the '=' must be 22 characters.
 
         print(bcolors.UNDERLINE + data[i]['@meal'] + '\n' + bcolors.ENDC) # Print what meal it is, i.e. Lunch or Dinner
 
@@ -67,7 +61,3 @@ else:
 
         else:
             print(bcolors.FAIL + data[i]['@disabled'] + bcolors.ENDC) # If the meal is 'disabled', print the disable message included in the data
-    
-        print()
-
-    print(bcolors.UNDERLINE + '\n\nBom Apetite!\n' + bcolors.ENDC)
