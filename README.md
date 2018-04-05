@@ -1,29 +1,21 @@
-# Ementas@UA
+# Cantina meus putos? 🥘😋
 
-### A simple python script that presents the day's menu at all of the University of Aveiro's canteens.
+### zsh config to display university's food menu 🍛
 
-#### Requirements:
+#### 💾 Install:
 
-- Python 3
-- xmltodict
-
-Install **xmltodict** via pip:
-```
-pip3 install xmltodict
+```bash
+git clone https://github.com/hugofragata/cantina-mpts.git
+sh ./cantina-mpts/install.sh
 ```
 
-#### Usage:
+#### 🐚 Usage:
 
-Just navigate to the directory and run:
-```
-python3 ementas@ua.py
-```
+![usage]()
 
-#### Thanks:
+#### 🙏 Thanks to 
 
 This script is made possible by the University of Aveiro's public API.
 More information about the specific menu API [here](http://api.web.ua.pt/en/services/universidade_de_aveiro/ementas).
 
-#### Screenshot:
-
-![example](https://raw.githubusercontent.com/RodrigoRosmaninho/ementas-ua/master/screenshots/term_ementas.png)
+And to [Rodrigo](https://github.com/RodrigoRosmaninho/ementas-ua)!
