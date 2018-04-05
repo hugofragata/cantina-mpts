@@ -11,7 +11,7 @@ sh ./cantina-mpts/install.sh
 
 #### 🐚 Usage:
 
-![usage]()
+![usage](https://i.imgur.com/wfWe602.png)
 
 #### 🙏 Thanks to 
 
